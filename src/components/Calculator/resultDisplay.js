@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
 });
 
 resultDisplay.defaultProps = {
-  result: [''],
+  result: [],
 };
 
 resultDisplay.propTypes = {

@@ -5,7 +5,7 @@ import ResultDisplay from './resultDisplay';
 import ButtonPanel from './buttonPanel';
 
 const calculator = () => {
-  const [result, setResult] = useState(['']);
+  const [result, setResult] = useState([]);
 
   function handleChange(newValue) {
     setResult(newValue);

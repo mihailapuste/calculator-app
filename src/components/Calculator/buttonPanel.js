@@ -2,6 +2,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, Button, View, Text, Alert} from 'react-native';
 import InputButton from './inputButton';
+import useToCalculate from './useToCalculate';
 
 const buttonPanel = (props) => {
   const [inputArray, setInputArray] = useState([]);
@@ -11,22 +12,18 @@ const buttonPanel = (props) => {
   }, [inputArray, props]);
 
   const onChangeInputArray = (input) => {
-    if (input === 'CLR') {
-      setInputArray(['']);
-    } else {
-      setInputArray([...inputArray, input]);
-    }
-    // console.log(input, inputArray);
+    setInputArray([...inputArray, input]);
+  };
+
+  const onCalculateResult = () => {
+    setInputArray([...inputArray, '=']);
+    setInputArray(useToCalculate(inputArray));
   };
 
   return (
     <>
       <View style={styles.buttonContainer}>
-        <InputButton
-          label="CLR"
-          isFunction
-          onPress={() => onChangeInputArray('CLR')}
-        />
+        <InputButton label="CLR" isFunction onPress={() => setInputArray([])} />
         <InputButton
           label="√"
           isFunction
@@ -67,11 +64,7 @@ const buttonPanel = (props) => {
         <InputButton label="1" onPress={() => onChangeInputArray('1')} />
         <InputButton label="2" onPress={() => onChangeInputArray('2')} />
         <InputButton label="3" onPress={() => onChangeInputArray('3')} />
-        <InputButton
-          label="="
-          isFunction
-          onPress={() => onChangeInputArray('=')}
-        />
+        <InputButton label="=" isFunction onPress={() => onCalculateResult()} />
       </View>
       <View style={styles.buttonContainer}>
         <InputButton label="0" onPress={() => onChangeInputArray('0')} />
