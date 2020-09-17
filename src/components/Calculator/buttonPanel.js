@@ -16,17 +16,21 @@ const buttonPanel = (props) => {
     } else {
       setInputArray([...inputArray, input]);
     }
-    console.log(input, inputArray);
+    // console.log(input, inputArray);
   };
 
   return (
     <>
       <View style={styles.buttonContainer}>
-        <InputButton label="0" onPress={() => onChangeInputArray('0')} />
         <InputButton
           label="CLR"
           isFunction
           onPress={() => onChangeInputArray('CLR')}
+        />
+        <InputButton
+          label="√"
+          isFunction
+          onPress={() => onChangeInputArray('√')}
         />
         <InputButton
           label="+"
@@ -67,6 +71,20 @@ const buttonPanel = (props) => {
           label="="
           isFunction
           onPress={() => onChangeInputArray('=')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <InputButton label="0" onPress={() => onChangeInputArray('0')} />
+        <InputButton label="." onPress={() => onChangeInputArray('.')} />
+        <InputButton
+          label="("
+          isFunction
+          onPress={() => onChangeInputArray('(')}
+        />
+        <InputButton
+          label=")"
+          isFunction
+          onPress={() => onChangeInputArray(')')}
         />
       </View>
     </>
