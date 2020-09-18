@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {useContext} from 'react';
-import {StyleSheet, Button, View, Text, Alert} from 'react-native'; 
-import {InOutContext} from './InOutContext'; 
+import {StyleSheet, Button, View, Text, Alert} from 'react-native';
+import {InOutContext} from './InOutContext';
 import InputButton from './inputButton';
 import useToCalculate from './useToCalculate';
 
@@ -14,7 +14,8 @@ const buttonPanel = () => {
 
   const onCalculateResult = () => {
     setInOutArray([...inOutArray, '=']);
-    setInOutArray(useToCalculate(inOutArray));
+    const calculatedResult = useToCalculate(inOutArray);
+    setInOutArray(calculatedResult);
   };
 
   return (
@@ -65,10 +66,7 @@ const buttonPanel = () => {
       </View>
       <View style={styles.buttonContainer}>
         <InputButton label="0" onPress={() => onChangeInputArray('0')} />
-        <InputButton
-          label="."
-          // onPress={() => onChangeInputArray('.')}
-        />
+        <InputButton label="." onPress={() => onChangeInputArray('.')} />
         <InputButton
           label="("
           isFunction
