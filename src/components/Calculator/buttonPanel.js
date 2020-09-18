@@ -68,16 +68,18 @@ const buttonPanel = (props) => {
       </View>
       <View style={styles.buttonContainer}>
         <InputButton label="0" onPress={() => onChangeInputArray('0')} />
-        <InputButton label="." onPress={() => onChangeInputArray('.')} />
+        <InputButton label="." 
+        // onPress={() => onChangeInputArray('.')}
+         />
         <InputButton
           label="("
           isFunction
-          onPress={() => onChangeInputArray('(')}
+          // onPress={() => onChangeInputArray('(')}
         />
         <InputButton
           label=")"
           isFunction
-          onPress={() => onChangeInputArray(')')}
+          // onPress={() => onChangeInputArray(')')}
         />
       </View>
     </>
