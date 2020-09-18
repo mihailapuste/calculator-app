@@ -1,12 +1,15 @@
-import React, {useState, useEffect} from 'react';
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, {useContext} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import PropTypes from 'prop-types';
+import {InOutContext} from './InOutContext';
 
-const resultDisplay = (props) => {
+const resultDisplay = () => {
+  const {inOutArray} = useContext(InOutContext);
+
   return (
     <>
       <View style={styles.resultContainer}>
-        <Text style={styles.resultText}>{props.result}</Text>
+        <Text style={styles.resultText}>{inOutArray}</Text>
       </View>
     </>
   );
@@ -14,6 +17,7 @@ const resultDisplay = (props) => {
 
 const styles = StyleSheet.create({
   resultContainer: {
+    borderRadius: 20,
     position: 'relative',
     alignItems: 'flex-end',
     backgroundColor: 'orange',
@@ -30,13 +34,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
-resultDisplay.defaultProps = {
-  result: [],
-};
-
-resultDisplay.propTypes = {
-  result: PropTypes.arrayOf(String),
-};
 
 export default resultDisplay;

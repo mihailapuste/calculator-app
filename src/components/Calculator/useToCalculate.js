@@ -1,9 +1,10 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const useToCalculate = (inputArray) => {
   const calcObj = getNumbersAndOperators(inputArray);
+
   if (calcObj !== false) {
     const finalRes = calculateResult(calcObj);
     if (finalRes !== false) {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {StyleSheet, Button, TouchableOpacity, Text} from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   inputButton: {
+    borderRadius: 100,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   functionButton: {
+    borderRadius: 100,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

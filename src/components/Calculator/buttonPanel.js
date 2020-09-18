@@ -1,29 +1,26 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, Button, View, Text, Alert} from 'react-native';
+import React, {useContext} from 'react';
+import {StyleSheet, Button, View, Text, Alert} from 'react-native'; 
+import {InOutContext} from './InOutContext'; 
 import InputButton from './inputButton';
 import useToCalculate from './useToCalculate';
 
-const buttonPanel = (props) => {
-  const [inputArray, setInputArray] = useState([]);
-
-  useEffect(() => {
-    props.onChange(inputArray);
-  }, [inputArray, props]);
+const buttonPanel = () => {
+  const {inOutArray, setInOutArray} = useContext(InOutContext);
 
   const onChangeInputArray = (input) => {
-    setInputArray([...inputArray, input]);
+    setInOutArray([...inOutArray, input]);
   };
 
   const onCalculateResult = () => {
-    setInputArray([...inputArray, '=']);
-    setInputArray(useToCalculate(inputArray));
+    setInOutArray([...inOutArray, '=']);
+    setInOutArray(useToCalculate(inOutArray));
   };
 
   return (
     <>
       <View style={styles.buttonContainer}>
-        <InputButton label="CLR" isFunction onPress={() => setInputArray([])} />
+        <InputButton label="CLR" isFunction onPress={() => setInOutArray([])} />
         <InputButton
           label="√"
           isFunction

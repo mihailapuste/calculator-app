@@ -1,23 +1,20 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, {useState, useEffect} from 'react';
-import {StyleSheet, Button, View, Text, Alert} from 'react-native';
+import React, {useState, useContext} from 'react';
+import {InOutContext} from './InOutContext';
 import ResultDisplay from './resultDisplay';
 import ButtonPanel from './buttonPanel';
 
 const calculator = () => {
-  const [result, setResult] = useState([]);
-
-  function handleChange(newValue) {
-    setResult(newValue);
-  }
+  const [inOutArray, setInOutArray] = useState([]);
 
   return (
     <>
-      <ResultDisplay result={result} />
-      <ButtonPanel onChange={handleChange} />
+      <InOutContext.Provider value={{inOutArray, setInOutArray}}>
+        <ResultDisplay />
+        <ButtonPanel />
+      </InOutContext.Provider>
     </>
   );
 };
-
 
 export default calculator;
