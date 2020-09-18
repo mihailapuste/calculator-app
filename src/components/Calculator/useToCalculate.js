@@ -11,8 +11,9 @@ const useToCalculate = (inputArray) => {
     } else {
       return ['Error'];
     }
+  } else {
+    return ['Error'];
   }
-  return [];
 };
 
 function calculateResult(calcObj) {
@@ -61,7 +62,7 @@ function getNumbersAndOperators(inputArray) {
   if (numbers.length === operators.length + 1) {
     return {nums: numbers, ops: operators};
   } else {
-    return false;
+    return false; // return false if there are more operators than numbers (Ex: 1+3* or 8+-9)
   }
 }
 
