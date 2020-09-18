@@ -52,9 +52,9 @@ const buttonPanel = () => {
         <InputButton label="5" onPress={() => onChangeInputArray('5')} />
         <InputButton label="6" onPress={() => onChangeInputArray('6')} />
         <InputButton
-          label="%"
+          label="÷"
           isFunction
-          onPress={() => onChangeInputArray('%')}
+          onPress={() => onChangeInputArray('÷')}
         />
       </View>
       <View style={styles.buttonContainer}>

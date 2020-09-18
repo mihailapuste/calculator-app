@@ -26,7 +26,7 @@ function calculateResult(calcObj) {
     if (i === 0) {
       result = Number(checkSqrt(nums[i]));
     } else {
-      if (ops[i - 1] === '%' && nums[i] === '0') { // can't divide by 0
+      if (ops[i - 1] === '÷' && nums[i] === '0') { // can't divide by 0
         return false;
       }
       const temp = Number(
@@ -48,7 +48,7 @@ function calculateResult(calcObj) {
 function getNumbersAndOperators(inputArray) {
   const numbers = inputArray
     .join('')
-    .split(/[%+\-[\]\\^x]/)
+    .split(/[÷+\-[\]\\^x]/)
     .filter(function (v) {
       return v !== '';
     });
@@ -75,7 +75,7 @@ function equateTwoNumbers(a, b, op) {
       return a - b;
     case 'x':
       return a * b;
-    case '%':
+    case '÷':
       if (b !== 0) {
         return a / b;
       } else {
