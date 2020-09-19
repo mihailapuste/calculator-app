@@ -2,51 +2,58 @@ import React from 'react';
 import {StyleSheet, Button, TouchableOpacity, Text} from 'react-native';
 import PropTypes from 'prop-types';
 
-const inputButton = (props) => {
+const inputButton = ({buttonStyle = 'input', label = '0', onPress}) => {
   return (
     <>
-      <TouchableOpacity
-        style={props.isFunction ? styles.functionButton : styles.inputButton}
-        onPress={props.onPress}>
-        <Text style={styles.buttonText}>{props.label}</Text>
+      <TouchableOpacity style={styles[buttonStyle]} onPress={onPress}>
+        <Text style={styles.buttonText}>{label}</Text>
       </TouchableOpacity>
     </>
   );
 };
 
-inputButton.defaultProps = {
-  label: '0',
-  isFunction: false,
-};
-
 inputButton.propTypes = {
   label: PropTypes.string,
-  isFunction: PropTypes.bool,
+  type: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
   buttonText: {
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: 'bold',
   },
-  inputButton: {
+  double: {
+    margin: 5,
     borderRadius: 100,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    width: '25%',
-    height: 100,
+    width: '50%',
+    height: 80,
     backgroundColor: 'white',
     borderColor: 'black',
     borderWidth: 1,
   },
-  functionButton: {
+  input: {
+    margin: 5,
     borderRadius: 100,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     width: '25%',
-    height: 100,
+    height: 80,
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 1,
+  },
+  function: {
+    margin: 5,
+    borderRadius: 100,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '25%',
+    height: 80,
     backgroundColor: 'red',
     borderColor: 'black',
     borderWidth: 1,

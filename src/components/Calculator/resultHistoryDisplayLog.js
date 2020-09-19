@@ -3,7 +3,7 @@ import React, {useContext} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {InOutContext} from './InOutContext';
 
-const displayContainer = () => {
+const resultHistoryDisplayLogContainer = () => {
   const {inOutArray} = useContext(InOutContext);
 
   return (
@@ -17,13 +17,12 @@ const displayContainer = () => {
 
 const styles = StyleSheet.create({
   resultContainer: {
-    marginBottom: '10%',
     borderRadius: 20,
-    position: 'relative',
-    alignItems: 'flex-end',
+    // position: 'relative',
+    // alignItems: 'flex-end',
     backgroundColor: 'orange',
-    height: 100,
-    width: '100%',
+    height: '100%',
+    // width: '100%',
     borderColor: 'black',
     borderWidth: 1,
   },
@@ -36,4 +35,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default displayContainer;
+export default resultHistoryDisplayLogContainer;

@@ -21,21 +21,20 @@ const buttonPanel = () => {
   return (
     <>
       <View style={styles.buttonContainer}>
-        <InputButton label="CLR" isFunction onPress={() => setInOutArray([])} />
+        <InputButton
+          label="CLR"
+          buttonStyle="function"
+          onPress={() => setInOutArray([])}
+        />
         <InputButton
           label="√"
-          isFunction
+          buttonStyle="function"
           onPress={() => onChangeInputArray('√')}
         />
         <InputButton
-          label="+"
-          isFunction
-          onPress={() => onChangeInputArray('+')}
-        />
-        <InputButton
-          label="-"
-          isFunction
-          onPress={() => onChangeInputArray('-')}
+          label="÷"
+          buttonStyle="function"
+          onPress={() => onChangeInputArray('÷')}
         />
       </View>
       <View style={styles.buttonContainer}>
@@ -44,7 +43,7 @@ const buttonPanel = () => {
         <InputButton label="9" onPress={() => onChangeInputArray('9')} />
         <InputButton
           label="x"
-          isFunction
+          buttonStyle="function"
           onPress={() => onChangeInputArray('x')}
         />
       </View>
@@ -53,29 +52,32 @@ const buttonPanel = () => {
         <InputButton label="5" onPress={() => onChangeInputArray('5')} />
         <InputButton label="6" onPress={() => onChangeInputArray('6')} />
         <InputButton
-          label="÷"
-          isFunction
-          onPress={() => onChangeInputArray('÷')}
+          label="+"
+          buttonStyle="function"
+          onPress={() => onChangeInputArray('+')}
         />
       </View>
       <View style={styles.buttonContainer}>
         <InputButton label="1" onPress={() => onChangeInputArray('1')} />
         <InputButton label="2" onPress={() => onChangeInputArray('2')} />
         <InputButton label="3" onPress={() => onChangeInputArray('3')} />
-        <InputButton label="=" isFunction onPress={() => onCalculateResult()} />
+        <InputButton
+          label="-"
+          buttonStyle="function"
+          onPress={() => onChangeInputArray('-')}
+        />
       </View>
       <View style={styles.buttonContainer}>
-        <InputButton label="0" onPress={() => onChangeInputArray('0')} />
+        <InputButton
+          label="0"
+          buttonStyle="double"
+          onPress={() => onChangeInputArray('0')}
+        />
         <InputButton label="." onPress={() => onChangeInputArray('.')} />
         <InputButton
-          label="("
-          isFunction
-          // onPress={() => onChangeInputArray('(')}
-        />
-        <InputButton
-          label=")"
-          isFunction
-          // onPress={() => onChangeInputArray(')')}
+          label="="
+          buttonStyle="function"
+          onPress={() => onCalculateResult()}
         />
       </View>
     </>
@@ -87,20 +89,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignContent: 'stretch',
-  },
-  clearButton: {
-    width: '50%',
-    height: 100,
-    backgroundColor: 'red',
-    borderColor: 'black',
-    borderWidth: 1,
-  },
-  functionButton: {
-    width: '25%',
-    height: 100,
-    backgroundColor: 'red',
-    borderColor: 'black',
-    borderWidth: 1,
   },
 });
 

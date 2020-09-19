@@ -51,7 +51,7 @@ const calculateResult = (calcObj) => {
 };
 
 const getPrecision = (value) => {
-  const maxPrecision = 14;
+  const maxPrecision = 13;
   const precisionArray = value.toString().split('.');
 
   if (precisionArray.length <= 2) {
