@@ -125,6 +125,7 @@
 		13B07FAE1A68108700A75B9A /* hooksdemo */ = {
 			isa = PBXGroup;
 			children = (
+				E79250702519335300F08BA9 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -161,7 +162,6 @@
 				6DF0F6704B0482847D44D56E /* Pods-hooksdemo-tvOSTests.debug.xcconfig */,
 				C35D133045040F4B5C4EA5A2 /* Pods-hooksdemo-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -196,6 +196,13 @@
 				2D02E4901E0B4A5D006451C7 /* hooksdemo-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E79250702519335300F08BA9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

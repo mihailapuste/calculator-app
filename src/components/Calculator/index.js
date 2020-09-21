@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, {useState, useMemo} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, SafeAreaView, Button} from 'react-native';
 import {InOutContext} from './InOutContext';
 import ResultDisplay from './resultDisplay';
 import ButtonPanel from './buttonPanel';
-import ResultHistoryDisplayLog from './resultHistoryDisplayLog';
 
-const calculator = () => {
+const calculator = ({navigation}) => {
   const [inOutArray, setInOutArray] = useState([]);
 
   const providerValue = useMemo(() => ({inOutArray, setInOutArray}), [
@@ -15,17 +14,14 @@ const calculator = () => {
   ]);
 
   return (
-    <>
+    <SafeAreaView>
       <InOutContext.Provider value={providerValue}>
         <View style={styles.calculatorContainer}>
           <ResultDisplay />
           <ButtonPanel />
         </View>
-        {/* <View style={styles.logContainer}>
-          <ResultHistoryDisplayLog />
-        </View> */}
       </InOutContext.Provider>
-    </>
+    </SafeAreaView>
   );
 };
 
@@ -34,7 +30,6 @@ const styles = StyleSheet.create({
     margin: '5%',
     height: '100%',
   },
-
 });
 
 export default calculator;
