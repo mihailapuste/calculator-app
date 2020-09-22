@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   scrollView: {
     padding: 8,
     height: '100%',
+    backgroundColor: '#d3d3d3',
   },
 });
 

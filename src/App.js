@@ -60,7 +60,7 @@ const App = () => {
           name="ViewHeadline"
           component={ViewHeadline}
           options={{
-            title: 'View Headline',
+            title: 'Full Headline',
             headerStyle: {
               backgroundColor: '#4d4dff',
             },
