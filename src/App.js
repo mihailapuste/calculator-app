@@ -5,7 +5,9 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from './components/Home/index';
 import Calculator from './components/Calculator/index';
-import NewsFeed from './components/NewsFeed/index';
+import AllHeadlines from './components/NewsFeed/allHeadlines';
+import ViewHeadline from './components/NewsFeed/viewHeadline';
+
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -41,12 +43,26 @@ const App = () => {
           }}
         />
         <Stack.Screen
-          name="NewsFeed"
-          component={NewsFeed}
+          name="AllHeadlines"
+          component={AllHeadlines}
           options={{
-            title: 'News Feed',
+            title: 'All Headlines',
             headerStyle: {
-              backgroundColor: '#3371FF',
+              backgroundColor: '#0000b3',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+          }}
+        />
+        <Stack.Screen
+          name="ViewHeadline"
+          component={ViewHeadline}
+          options={{
+            title: 'View Headline',
+            headerStyle: {
+              backgroundColor: '#4d4dff',
             },
             headerTintColor: '#fff',
             headerTitleStyle: {

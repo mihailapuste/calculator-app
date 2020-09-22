@@ -17,7 +17,7 @@ const home = ({navigation}) => {
           title="News Feed"
           subtitle="Basic News Feed for Canadian breaking news by Mihai"
           imageUrl="https://c8.alamy.com/comp/2BD9KYE/breaking-news-world-news-with-backgorund-waving-national-flag-of-canada-3d-illustration-2BD9KYE.jpg"
-          onView={() => navigation.push('NewsFeed')}
+          onView={() => navigation.push('AllHeadlines')}
         />
       </ScrollView>
     </SafeAreaView>
